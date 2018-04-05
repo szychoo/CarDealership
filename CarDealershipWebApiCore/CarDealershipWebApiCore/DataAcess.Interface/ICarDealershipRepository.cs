@@ -1,13 +1,14 @@
 ﻿using CarDealership.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CarDealership.DataAcessInterface
 {
-    interface CarDealershipRepository
+    public interface ICarDealershipRepository
     {
-        ICollection<Car> GetAll();
+        IQueryable<Car> GetAll();
 
         Car GetById(int id);
 
