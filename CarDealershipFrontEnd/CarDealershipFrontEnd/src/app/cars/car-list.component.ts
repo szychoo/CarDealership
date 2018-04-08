@@ -10,11 +10,16 @@ import { CarListService } from "./car-list.service";
 
 export class CarListComponent implements OnInit{
   
+  errorMessage: string;
+
   constructor(private _carListService: CarListService) {
   }
 
   ngOnInit(): void {
-    this.cars = this._carListService.getCars();
+    this._carListService.getCars().subscribe(
+      cars => this.cars = cars,
+      error => this.errorMessage = <any>error
+    );
   }
   
   cars: ICar[];
