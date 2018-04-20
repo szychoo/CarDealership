@@ -33,7 +33,7 @@ namespace CarDealershipWebApiCore
                        .AllowAnyHeader();
             }));
 
-            services.AddScoped<ICarDealershipRepository, CarDealershipRepository>();
+            //services.AddScoped<ICarDealershipRepository, CarDealershipRepository>();
 
             services.AddDbContext<CarDealershipDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CarDealership")));
         

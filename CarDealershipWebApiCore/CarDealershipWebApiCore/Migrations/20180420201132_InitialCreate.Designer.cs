@@ -11,7 +11,7 @@ using System;
 namespace CarDealershipWebApiCore.Migrations
 {
     [DbContext(typeof(CarDealershipDbContext))]
-    [Migration("20180405165416_InitialCreate")]
+    [Migration("20180420201132_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,17 +26,20 @@ namespace CarDealershipWebApiCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Color");
+                    b.Property<string>("Color")
+                        .HasMaxLength(50);
 
                     b.Property<short>("EngineSize");
 
                     b.Property<short>("HorsePower");
 
-                    b.Property<string>("Make");
+                    b.Property<string>("Make")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .HasMaxLength(50);
 
-                    b.Property<DateTime>("ProductionYear");
+                    b.Property<short>("ProductionYear");
 
                     b.HasKey("Id");
 

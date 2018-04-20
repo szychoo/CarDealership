@@ -25,17 +25,20 @@ namespace CarDealershipWebApiCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Color");
+                    b.Property<string>("Color")
+                        .HasMaxLength(50);
 
                     b.Property<short>("EngineSize");
 
                     b.Property<short>("HorsePower");
 
-                    b.Property<string>("Make");
+                    b.Property<string>("Make")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .HasMaxLength(50);
 
-                    b.Property<DateTime>("ProductionYear");
+                    b.Property<short>("ProductionYear");
 
                     b.HasKey("Id");
 

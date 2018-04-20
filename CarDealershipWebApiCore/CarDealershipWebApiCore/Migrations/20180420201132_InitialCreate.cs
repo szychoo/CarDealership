@@ -15,12 +15,12 @@ namespace CarDealershipWebApiCore.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Color = table.Column<string>(nullable: true),
+                    Color = table.Column<string>(maxLength: 50, nullable: true),
                     EngineSize = table.Column<short>(nullable: false),
                     HorsePower = table.Column<short>(nullable: false),
-                    Make = table.Column<string>(nullable: true),
-                    Model = table.Column<string>(nullable: true),
-                    ProductionYear = table.Column<DateTime>(nullable: false)
+                    Make = table.Column<string>(maxLength: 50, nullable: true),
+                    Model = table.Column<string>(maxLength: 50, nullable: true),
+                    ProductionYear = table.Column<short>(nullable: false)
                 },
                 constraints: table =>
                 {
